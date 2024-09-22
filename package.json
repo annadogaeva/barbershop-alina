@@ -11,9 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.7.1"
+
   },
   "devDependencies": {
     "browser-sync": "^3.0.2",
+    "del": "6.0.0",
     "gulp": "^4.0.2",
     "gulp-cssmin": "^0.2.0",
     "gulp-notify": "^4.0.0",
