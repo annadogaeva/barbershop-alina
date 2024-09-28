@@ -10,7 +10,7 @@ const notify = require("gulp-notify");
 
 
 function SASS() {
-    return src('./src/styles/*.scss')  // берём все SASS-файлы
+    return src('./src/styles/*.scss', { style: './' })  // берём все SASS-файлы
         .pipe(sourcemaps.init())
         .pipe(sass().on("error", notify.onError()))
         .pipe(cssmin())
