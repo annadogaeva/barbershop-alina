@@ -16,7 +16,7 @@ function SASS() {
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(sourcemaps.write("."))
-        .pipe(dest('./dist/src/')) //// выгружаем результат
+        .pipe(dest('dist/src/')) //// выгружаем результат
         .pipe(browserSync.stream());
 
 }
@@ -67,4 +67,4 @@ function myServer() {
     watch('./scripts/*', series('scripts'))
 }
 
-exports.default = series( SASS,html, fonts, images, scripts, myServer );
+exports.default = series( SASS, html, fonts, images, scripts, myServer );
