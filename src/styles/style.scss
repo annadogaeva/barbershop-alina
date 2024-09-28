@@ -439,14 +439,15 @@ body {
   }
   .slide {
     position: relative;
-
     height: 477px;
+
     img {
       width: 100%;
-      height: 100%;
       object-fit: contain;
     }
   }
+
+
   .info {
     position: absolute;
     bottom: 0;
@@ -521,6 +522,14 @@ footer {
   }
 }
 
+.slick-center {
+  transform: scale(1.2);
+  position: relative;
+  z-index: 15;
+}
+.slick-slide {
+  transition: 0.2s ease;
+}
 
 
 

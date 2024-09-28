@@ -55,7 +55,7 @@ exports.scripts = scripts;
 function myServer() {
     browserSync.init({
         server: {
-            baseDir: "./" // папка для локального сервера
+            baseDir: "./dist" // папка для локального сервера
         },
         notify: false
     });
