@@ -10,7 +10,7 @@ const notify = require("gulp-notify");
 
 
 function SASS() {
-    return src('./src/styles/*.scss', { style: './' })  // берём все SASS-файлы
+    return src('./src/*.scss', { style: './' })  // берём все SASS-файлы
         .pipe(sourcemaps.init())
         .pipe(sass().on("error", notify.onError()))
         .pipe(cssmin())
@@ -60,7 +60,7 @@ function myServer() {
         notify: false
     });
 
-    watch('./src/styles/*.scss', { usePolling: true }, SASS) // следим за SASS
+    watch('./src/*.scss', { usePolling: true }, SASS) // следим за SASS
     watch('./*.html', series('html'))
     watch('./fonts/*', series('fonts'))
     watch('./images/*', series('images'))
