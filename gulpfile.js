@@ -16,7 +16,7 @@ function SASS() {
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(sourcemaps.write("."))
-        .pipe(dest('dist/css/')) //// выгружаем результат
+        .pipe(dest('dist/')) //// выгружаем результат
         .pipe(browserSync.stream());
 
 }
