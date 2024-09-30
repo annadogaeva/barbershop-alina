@@ -9,7 +9,7 @@ $(document).ready(function(){
         arrows: true,
         adaptiveHeight: true,
         centerMode: true,
-        centerPadding: '50px',
+        centerPadding: '-20px',
         focusOnSelect: true
     });
 });
