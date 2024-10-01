@@ -1,3 +1,4 @@
+'use strict';
 
 $(document).ready(function(){
     $('.slider').slick({
@@ -13,3 +14,13 @@ $(document).ready(function(){
         focusOnSelect: true
     });
 });
+
+document.getElementById('burger').onclick = function () {
+    const menuModal = document.getElementById('menuModal');
+    menuModal.style.display = 'block';
+};
+
+document.getElementById('menu__close').onclick = function () {
+    const menuModal = document.getElementById('menuModal');
+    menuModal.style.display = 'none';
+};

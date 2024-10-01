@@ -53,6 +53,10 @@ body {
   padding-top: 59px;
   text-align: center;
 
+  .header__burger {
+    display: none;
+  }
+
   .menu__list {
     list-style: none;
     display: flex;
@@ -78,6 +82,10 @@ body {
       font-family: MullerRegular, sans-serif;
     }
   }
+}
+
+#menuModal {
+  display: none;
 }
 
 .container.main {
@@ -449,7 +457,7 @@ body {
 
   .slide {
     position: relative;
-    height: 404px;
+    height: 100%;
     width: 292px;
 
     img {
@@ -458,7 +466,7 @@ body {
     }
 
     .slide-active {
-      height: 404px;
+      height: 120%;
       width: 292px;
 
     }
@@ -510,8 +518,30 @@ body {
 
   .slick-dots li.slick-active button {
     background-color: $btn-color;
+  }
+  .slick-nav-container {
+    position: relative;
+  }
 
+  .slick-dots {
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    right: 0;
+    /* ... остальные стили */
+  }
 
+  .slick-prev {
+    position: absolute;
+    left: 320px;
+    top: 540px;
+    /* ... остальные стили */
+  }
+
+  .slick-next {
+    position: absolute;
+    right: 320px;
+    top: 540px;
 
   }
 }
