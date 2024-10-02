@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>БородачЪ</title>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="styles/style.min.css">
     <link rel="stylesheet" href="styles/slick.min.css"/>
     <link rel="stylesheet" href="styles/slick-theme.min.css"/>
@@ -82,7 +86,7 @@
 <section class="main">
     <div class="container main">
         <div class="main__info">
-            <h1 class="title main__title">Создайте деловой имидж,
+            <h1 class="title main__title wow animate__fadeInRight" data-wow-duration="2s">Создайте деловой имидж,
                 который достоин Вас!</h1>
             <div class="main__text">
                 Мужские стрижки и бритье в центре Москвы
@@ -103,8 +107,8 @@
         </div>
     </div>
 </section>
-<section class="aside__first">
-    <div class="container">
+<section class="aside__first ">
+    <div class="container wow animate__fadeInRight" data-wow-duration="2s">
         <div class="aside aside__location">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
                  id="Capa_1"
@@ -354,7 +358,7 @@
                 <img src="images/content_img.png" alt="Man2">
             </div>
             <div class="advantages">
-                <div class="advantage__one">
+                <div class="advantage__one wow animate__fadeInRight" data-wow-duration="0.5s">
                     <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                          viewBox="0 0 511.988 511.988" style="enable-background:new 0 0 511.988 511.988; fill: #ae8959"
@@ -448,7 +452,7 @@
                         Мы предложим вам чашечку кофе или чая
                     </div>
                 </div>
-                <div class="advantage__two">
+                <div class="advantage__two wow animate__fadeInRight" data-wow-duration="1s">
                     <svg id="Layer_37" ; height="20" viewBox="0 0 64 64" width="20" style=" fill: #ae8959"
                          xmlns="http://www.w3.org/2000/svg">
                         <g>
@@ -463,7 +467,7 @@
 
 
                 </div>
-                <div class="advantage__three">
+                <div class="advantage__three wow animate__fadeInRight" data-wow-duration="1.5s">
 
                     <?xml version="1.0" encoding="iso-8859-1"?>
                     <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -724,8 +728,13 @@
             Вы у нас первый раз?
             Получите <span>скидку 15%</span>
         </div>
-        <div class="aside__action">
-            <button class="btn aside__thid__btn">Получить скидку</button>
+        <div class="aside__action wow animate__zoomIn" data-wow-duration="1s">
+            <button class="btn aside__thid__btn" id="popup-trigger">Получить скидку</button>
+        </div>
+        <div class="overlay"></div>
+        <div class="popup" id="popup">
+            <p>Просто запишитесь в наш барбершоп и приходите - скидку мы применим после осуществления услуги.</p>
+            <button class="close-popup">×</button>
         </div>
     </div>
 </section>
@@ -745,73 +754,77 @@
                         <p>
                             Алексей
                         </p>
-                            <button>Записаться</button>
+                            <button class="open-modal">Записаться</button>
+                        <div class="modal" id="registration-modal">
+                            <div class="modal__content">
+                                <form class="registration-form">
+                                    <input type="text" id="name" name="name" placeholder="Ім'я">
+                                    <button type="submit">Відправити</button>
+                                </form>
+                                <button class="close-modal">Закрити</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="slide">
                     <img src="images/marat.png" alt="Мастер 2">
                     <div class="info">
                         <p>Марат</p>
-                        <button>Записаться</button>
+                        <button class="open-modal">Записаться</button>
                     </div>
                 </div>
                 <div class="slide">
                     <img src="images/Katy.png" alt="Мастер 3">
                     <div class="info">
                         <p>Екатерина</p>
-                        <button>Записаться</button>
+                        <button class="open-modal">Записаться</button>
                     </div>
                 </div>
                 <div class="slide">
                     <img src="images/Alex.png" alt="Мастер 1">
                     <div class="info">
                         <p>Алексей</p>
-                        <button>Записаться</button>
+                         <button class="open-modal">Записаться</button>
                     </div>
                 </div>
                 <div class="slide">
                     <img src="images/marat.png" alt="Мастер 2">
                     <div class="info">
                         <p>Марат</p>
-                        <button>Записаться</button>
+                         <button class="open-modal">Записаться</button>
                     </div>
                 </div>
                 <div class="slide">
                     <img src="images/Katy.png" alt="Мастер 3">
                     <div class="info">
                         <p>Екатерина</p>
-                        <button>Записаться</button>
+                         <button class="open-modal">Записаться</button>
                     </div>
                 </div>
                 <div class="slide">
                     <img src="images/Alex.png" alt="Мастер 1">
                     <div class="info">
                         <p>Алексей</p>
-                        <button>Записаться</button>
+                         <button class="open-modal">Записаться</button>
                     </div>
                 </div>
                 <div class="slide">
                     <img src="images/marat.png" alt="Мастер 2">
                     <div class="info">
                         <p>Марат</p>
-                        <button>Записаться</button>
+                         <button class="open-modal">Записаться</button>
                     </div>
                 </div>
                 <div class="slide">
                     <img src="images/Katy.png" alt="Мастер 3">
                     <div class="info">
                         <p>Екатерина</p>
-                        <button>Записаться</button>
+                         <button class="open-modal">Записаться</button>
                     </div>
                 </div>
 
             </div>
-            <div class="slick-nav-container">
-                <button class="slick-prev">Предыдущий</button>
-                <div class="slick-dots">
-                </div>
-                <button class="slick-next">Следующий</button>
-            </div>
+
         </div>
     </div>
 </section>
@@ -868,6 +881,10 @@
 </footer>
 <script src="scripts/jquery-3.7.1.min.js"></script>
 <script src="scripts/slick.min.js"></script>
-<script src="/scripts/script.js"></script>
+<script src="scripts/script.js"></script>
+<script src="scripts/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
 </body>
 </html>

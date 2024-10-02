@@ -10,13 +10,13 @@ const notify = require("gulp-notify");
 
 
 function SASS() {
-    return src('./styles/*.scss', { base: './' })  // берём все SASS-файлы
+    return src('./styles/*.scss')  // берём все SASS-файлы
         .pipe(sourcemaps.init())
         .pipe(sass().on("error", notify.onError()))
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(sourcemaps.write("."))
-        .pipe(dest('dist/')) //// выгружаем результат
+        .pipe(dest('dist/styles/')) //// выгружаем результат
         .pipe(browserSync.stream());
 
 }

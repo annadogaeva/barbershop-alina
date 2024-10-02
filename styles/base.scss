@@ -201,51 +201,57 @@ body {
     color: #fff;
     gap: 68px;
     border-right: 1px solid $btn-color;
+    .content__img img {
+      transition: transform 0.3s ease-in-out;
+    }
+    .content__img img:hover {
+      transform: scale(1.1);
+    }
+}
 
-  }
+.advantages {
+  display: grid;
+  row-gap: 26px;
+  font-size: 18px;
+  margin-top: 72px;
 
-  .advantages {
+  .advantage__one {
     display: grid;
-    row-gap: 26px;
-    font-size: 18px;
-    margin-top: 72px;
-
-    .advantage__one {
-      display: grid;
-      grid-template-columns: 20px 1fr;
-      column-gap: 20px;
-      align-items: center;
-
-      svg {
-        justify-self: center;
-      }
-    }
-
-    .advantage__two {
-      display: grid;
-      grid-template-columns: 20px 1fr;
-      column-gap: 20px;
-      align-items: center;
-    }
-
-    .advantage__three {
-      display: grid;
-      grid-template-columns: 20px 1fr;
-      column-gap: 20px;
-      align-items: center;
-    }
-  }
-
-  .content__info {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 35px;
+    grid-template-columns: 20px 1fr;
+    column-gap: 20px;
     align-items: center;
 
-    .content__img {
-      text-align: center;
+    svg {
+      justify-self: center;
     }
   }
+
+  .advantage__two {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    column-gap: 20px;
+    align-items: center;
+  }
+
+  .advantage__three {
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    column-gap: 20px;
+    align-items: center;
+  }
+}
+
+.content__info {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 35px;
+  align-items: center;
+
+  .content__img {
+    text-align: center;
+  }
+}
+
 }
 
 .aside__second {
@@ -415,7 +421,49 @@ body {
         color: $btn-color;
       }
     }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #000000;
+      padding: 50px;
+      border: 4px solid $btn-color;
+      z-index: 999;
+
+      p {
+        font-size: 28px;
+        font-family: LoraRegular, sans-serif;
+      }
+    }
+
+    .close-popup {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
   }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(152, 108, 52, 0.26);
+  display: none;
+  z-index: 998;
+}
+
+.registration-form {
+  z-index: 999;
 }
 
 .masters .container {
@@ -473,7 +521,39 @@ body {
 
 
   }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
 
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
   .info {
     position: absolute;
     bottom: 0;
@@ -504,10 +584,11 @@ body {
       color: rgb(255, 255, 255);
       font-weight: bold;
       border-width: 1px;
-      border-color:$btn-color;
+      border-color: $btn-color;
       background-color: rgb(0, 0, 0, 0.2);
     }
   }
+
   .slick-dots li button {
     background-color: #000; /* Цвет фона */
     border: 1px solid $btn-color; /* Граница */
@@ -519,6 +600,7 @@ body {
   .slick-dots li.slick-active button {
     background-color: $btn-color;
   }
+
   .slick-nav-container {
     position: relative;
   }

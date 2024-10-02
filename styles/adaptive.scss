@@ -95,7 +95,7 @@
       text-align: center;
 
       img {
-        max-width: 300px;
+        max-width: 284px;
 
       }
     }
@@ -156,7 +156,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+    background-color: rgba(0, 0, 0, 0.9); /* Полупрозрачный фон */
     justify-content: center;
     align-items: center;
     z-index: 999;
@@ -235,6 +235,33 @@
         left: auto;
         right: -10px;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .aside__first {
+    height: 100%;
+    margin-top: 30px;
+
+    .container {
+      .aside {
+        gap: 1px;
+
+        svg {
+          height: 20px;
+        }
+      }
+    }
+  }
+  .price .container .price__info_all .price__info {
+    grid-template-columns: 188px 59px;
+    column-gap: 5px;
+    .list__price_info {
+      font-size: 12px;
+    }
+    .list__price {
+      font-size: 12px;
     }
   }
 }

@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "jquery": "^3.7.1"
-
   },
   "devDependencies": {
     "browser-sync": "^3.0.2",
