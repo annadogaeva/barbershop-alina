@@ -8,7 +8,6 @@ const openModalButtons = document.getElementsByClassName('open-modal');
 const closeModalBtn = document.querySelector('.close-modal');
 
 
-
 $(document).ready(function(){
     $('.slider').slick({
         dots: true,
@@ -20,7 +19,16 @@ $(document).ready(function(){
         adaptiveHeight: true,
         centerMode: true,
         centerPadding: '-20px',
-        focusOnSelect: true
+        focusOnSelect: true,
+        appendArrows: $('.nav-masters'),
+        appendDots: $('.nav-masters'),
+        customPaging: function(index) {
+            const totalSlides = $('.slider .slick-slide').length;
+            const visibleDots = 3;
+            const dotIndex = index % visibleDots;
+            const dotClass = dotIndex === 0 ? 'slick-active' : '';
+            return '<button type="button" role="tab" id="slick-slide-control' + dotIndex + '" aria-controls="slick-slide' + index + '" aria-label="' + (dotIndex + 1) + ' of ' + visibleDots + '" tabindex="-1" class="' + dotClass + '">' + (dotIndex + 1) + '</button>';
+        }
     });
 });
 
@@ -64,7 +72,6 @@ overlay.addEventListener('click', () => {
     modal.style.display = 'none';
     overlay.style.display = 'none';
 });
-
 
 
 

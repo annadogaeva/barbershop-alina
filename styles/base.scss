@@ -201,56 +201,58 @@ body {
     color: #fff;
     gap: 68px;
     border-right: 1px solid $btn-color;
+
     .content__img img {
       transition: transform 0.3s ease-in-out;
     }
+
     .content__img img:hover {
       transform: scale(1.1);
     }
-}
+  }
 
-.advantages {
-  display: grid;
-  row-gap: 26px;
-  font-size: 18px;
-  margin-top: 72px;
-
-  .advantage__one {
+  .advantages {
     display: grid;
-    grid-template-columns: 20px 1fr;
-    column-gap: 20px;
-    align-items: center;
+    row-gap: 26px;
+    font-size: 18px;
+    margin-top: 72px;
 
-    svg {
-      justify-self: center;
+    .advantage__one {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      column-gap: 20px;
+      align-items: center;
+
+      svg {
+        justify-self: center;
+      }
+    }
+
+    .advantage__two {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      column-gap: 20px;
+      align-items: center;
+    }
+
+    .advantage__three {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      column-gap: 20px;
+      align-items: center;
     }
   }
 
-  .advantage__two {
+  .content__info {
     display: grid;
-    grid-template-columns: 20px 1fr;
-    column-gap: 20px;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 35px;
     align-items: center;
-  }
 
-  .advantage__three {
-    display: grid;
-    grid-template-columns: 20px 1fr;
-    column-gap: 20px;
-    align-items: center;
+    .content__img {
+      text-align: center;
+    }
   }
-}
-
-.content__info {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  row-gap: 35px;
-  align-items: center;
-
-  .content__img {
-    text-align: center;
-  }
-}
 
 }
 
@@ -505,22 +507,21 @@ body {
 
   .slide {
     position: relative;
-    height: 100%;
-    width: 292px;
+    width: 336px;
+    height: 464px;
 
     img {
       width: 100%;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .slide-active {
-      height: 120%;
-      width: 292px;
-
+      width: 336px;
     }
-
-
   }
+
   .modal {
     display: none;
     position: fixed;
@@ -530,7 +531,7 @@ body {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
   .modal-content {
@@ -554,6 +555,7 @@ body {
     text-decoration: none;
     cursor: pointer;
   }
+
   .info {
     position: absolute;
     bottom: 0;
@@ -567,6 +569,7 @@ body {
     align-items: center;
     color: #fff;
 
+
     p {
       font-size: 20px;
       font-family: LoraRegular, sans-serif;
@@ -576,7 +579,7 @@ body {
       margin-bottom: 20px;
     }
 
-    button {
+    .open-modal {
       width: 165px;
       height: 40px;
       font-size: 16px;
@@ -585,47 +588,73 @@ body {
       font-weight: bold;
       border-width: 1px;
       border-color: $btn-color;
-      background-color: rgb(0, 0, 0, 0.2);
+
     }
   }
 
-  .slick-dots li button {
-    background-color: #000; /* Цвет фона */
-    border: 1px solid $btn-color; /* Граница */
-    width: 25px;
-    height: 25px;
+}
 
-  }
+.slick-dots {
+  text-align: center;
+  padding: 25px 0;
+}
 
-  .slick-dots li.slick-active button {
-    background-color: $btn-color;
-  }
+.slick-dots li {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin: 0 5px;
+  border: 1px solid $btn-color;
 
-  .slick-nav-container {
-    position: relative;
-  }
+}
 
-  .slick-dots {
-    position: absolute;
-    bottom: -80px;
-    left: 0;
-    right: 0;
-    /* ... остальные стили */
-  }
+.slick-dots li::before {
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: $btn-color;
+  border: 1px solid transparent; /* Сохраняем внешнюю границу */
+  transition: opacity 0.3s ease; /* Добавим плавную анимацию */
+  opacity: 0;
+  content: "";
+  position: absolute; /* Позиционируем внутренний квадрат относительно родительского элемента */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Центрируем внутренний квадрат */
 
-  .slick-prev {
-    position: absolute;
-    left: 320px;
-    top: 540px;
-    /* ... остальные стили */
-  }
+}
 
-  .slick-next {
-    position: absolute;
-    right: 320px;
-    top: 540px;
+.slick-dots li.slick-active::before {
+  opacity: 1; /* Делаем внутренний квадрат видимым */
+}
 
-  }
+.nav-masters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  column-gap: 10px; /* Уменьшаем расстояние между элементами */
+}
+
+.slick-prev {
+  order: 1; /* Первая */
+  position: static;
+  align-self: center;
+  transform: translate(50%, 0);
+
+}
+
+.slick-dots {
+  order: 2; /* Вторая */
+  position: static;
+  max-width: 350px;
+}
+
+.slick-next {
+  order: 3; /* Третья */
+  position: static;
+  align-self: center;
+  transform: translate(-50%, 0);
 }
 
 .address {
@@ -692,13 +721,36 @@ footer {
 .slick-center {
   transform: scale(1.2);
   position: relative;
-  z-index: 15;
+  z-index: 500;
+
 }
 
 .slick-slide {
+  filter: grayscale(100%);
+}
+
+.slick-active {
+
+  .open-modal {
+    background-color: $btn-color;
+  }
+
+}
+
+
+.slick-list {
+  overflow-x: hidden;
+  height: 525px;
+  padding-top: 40px;
+}
+
+.slide {
   transition: 0.2s ease;
 }
 
+.slick-current {
+  filter: none;
+}
 
 
 
