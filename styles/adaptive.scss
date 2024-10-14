@@ -73,6 +73,29 @@
       place-items: center;
     }
   }
+
+  .masters .container {
+    .slide {
+      height: 290px;
+    }
+    .slick-list {
+      height: 290px;
+    }
+  }
+
+
+  .popuprequest {
+    height: auto;
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-items: center;
+      grid-gap: 5px;
+      column-gap: 5px;
+    }
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -236,6 +259,9 @@
         right: -10px;
       }
     }
+  }
+  .popup {
+    width: 100%;
   }
 }
 
